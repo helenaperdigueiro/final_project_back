@@ -11,7 +11,10 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category")
-    private Set<Product> products = new HashSet<>();
+    private List<Product> products = new ArrayList<>();
+
+    public Category() {
+    }
 
     public Integer getId() {
         return id;
@@ -25,11 +28,11 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Set<Product> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 }

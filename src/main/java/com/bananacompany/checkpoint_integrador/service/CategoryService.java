@@ -1,12 +1,12 @@
 package com.bananacompany.checkpoint_integrador.service;
 
+import com.bananacompany.checkpoint_integrador.exception.BadRequestException;
 import com.bananacompany.checkpoint_integrador.persistence.entity.Category;
 import com.bananacompany.checkpoint_integrador.persistence.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -18,10 +18,12 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-    public Category selectById(Integer id) {
-        if(categoryRepository.existsById(id)) {
-            categoryRepository.findById(id);
+    public Category selectById(Integer id) throws BadRequestException{
+        try {
+            return categoryRepository.findById(id).get();
+        } catch (Exception e) {
+            throw new BadRequestException("Category Id not found");
         }
-        return null;
+
     }
 }

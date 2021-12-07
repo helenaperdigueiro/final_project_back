@@ -14,6 +14,9 @@ public class Product {
     private Category category;
     private String description;
     private String image;
+    private Boolean hasGluten;
+    private Boolean hasLactose;
+    private Boolean hasEgg;
 
     public Product() {
     }
@@ -60,5 +63,29 @@ public class Product {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public Boolean hasGluten() {
+        return hasGluten;
+    }
+
+    public void setHasGluten(Boolean hasGluten) {
+        this.hasGluten = hasGluten;
+    }
+
+    public Boolean hasLactose() {
+        return hasLactose;
+    }
+
+    public void setHasLactose(Boolean hasLactose) {
+        this.hasLactose = hasLactose;
+    }
+
+    public Boolean hasEgg() {
+        return hasEgg;
+    }
+
+    public void setHasEgg(Boolean hasEgg) {
+        this.hasEgg = hasEgg;
     }
 }

@@ -24,9 +24,9 @@ public class CategoryController {
         return ResponseEntity.ok(categoryService.selectAll());
     }
     
-    @GetMapping("/{id}")
-    public ResponseEntity<Category> getCategoryById(@PathVariable Integer id) throws BadRequestException {
-            Category category = categoryService.selectById(id);
+    @GetMapping("/{name}")
+    public ResponseEntity<Category> getCategoryById(@PathVariable String name) throws BadRequestException {
+            Category category = categoryService.selectByName(name);
             return ResponseEntity.ok(category);
     }
 }

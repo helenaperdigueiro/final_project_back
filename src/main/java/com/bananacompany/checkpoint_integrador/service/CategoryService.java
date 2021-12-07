@@ -18,9 +18,9 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-    public Category selectById(Integer id) throws BadRequestException{
+    public Category selectByName(String name) throws BadRequestException{
         try {
-            return categoryRepository.findById(id).get();
+            return categoryRepository.findByName(name);
         } catch (Exception e) {
             throw new BadRequestException("Category Id not found");
         }

@@ -17,6 +17,7 @@ public class Product {
     private Boolean hasGluten;
     private Boolean hasLactose;
     private Boolean hasEgg;
+    // test
 
     public Product() {
     }

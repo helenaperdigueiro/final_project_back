@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import javax.persistence.*;
 
 @Entity
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +23,7 @@ public class Product {
     private Boolean hasGluten;
     private Boolean hasLactose;
     private Boolean hasEgg;
-    // test
+    private String ingredients;
 
     public Product() {
     }
@@ -70,7 +72,7 @@ public class Product {
         this.image = image;
     }
 
-    public Boolean hasGluten() {
+    public Boolean getHasGluten() {
         return hasGluten;
     }
 
@@ -78,7 +80,7 @@ public class Product {
         this.hasGluten = hasGluten;
     }
 
-    public Boolean hasLactose() {
+    public Boolean getHasLactose() {
         return hasLactose;
     }
 
@@ -86,11 +88,19 @@ public class Product {
         this.hasLactose = hasLactose;
     }
 
-    public Boolean hasEgg() {
+    public Boolean getHasEgg() {
         return hasEgg;
     }
 
     public void setHasEgg(Boolean hasEgg) {
         this.hasEgg = hasEgg;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 }

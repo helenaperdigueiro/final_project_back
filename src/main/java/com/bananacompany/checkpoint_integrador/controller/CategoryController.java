@@ -25,7 +25,7 @@ public class CategoryController {
     }
     
     @GetMapping("/{name}")
-    public ResponseEntity<Category> getCategoryById(@PathVariable String name) throws BadRequestException {
+    public ResponseEntity<Category> getCategoryByName(@PathVariable String name) throws BadRequestException {
             Category category = categoryService.selectByName(name);
             return ResponseEntity.ok(category);
     }

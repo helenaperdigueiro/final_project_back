@@ -10,12 +10,12 @@ public class CorsConfiguration implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         //liberando app cliente 1
         registry.addMapping("/**")
-                .allowedOrigins("https://vidotisbakery.vercel.app/")
+                .allowedOrigins("https://vidotisbakery.vercel.app/", "http://localhost:3000")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT");
 
         //liberando app cliente 2
-        registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000")
-                        .allowedMethods("GET", "OPTIONS", "HEAD", "TRACE", "CONNECT");
+//        registry.addMapping("/**")
+//                .allowedOrigins("http://localhost:3000")
+//                        .allowedMethods("GET", "OPTIONS", "HEAD", "TRACE", "CONNECT");
     }
 }

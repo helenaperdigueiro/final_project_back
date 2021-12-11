@@ -13,9 +13,9 @@ public class CorsConfiguration implements WebMvcConfigurer {
                 .allowedOrigins("https://vidotisbakery.vercel.app/")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT");
 
-//        liberando app cliente 2
-//        registry.addMapping("/**")
-//                .allowedOrigins("http://localhost:3000")
-//                        .allowedMethods("GET", "OPTIONS", "HEAD", "TRACE", "CONNECT");
+        //liberando app cliente 2
+        registry.addMapping("/**")
+                .allowedOrigins("http://localhost:3000")
+                        .allowedMethods("GET", "OPTIONS", "HEAD", "TRACE", "CONNECT");
     }
 }
